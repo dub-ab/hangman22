@@ -51,7 +51,7 @@ class App():
         self.header = c.Header(self.screen, '', self.font30, GRAY)
 
         # perpare game objects
-        self.game_state = 'active'
+        self.game_state = 'splash'
         self.wins = 0
         self.games = 0       
         self.result = ''

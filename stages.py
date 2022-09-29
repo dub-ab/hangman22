@@ -155,7 +155,7 @@ class Active():
         self.secret_word = choice(self.secret_word_list)
         self.get_secret_word_sprites(self.secret_word)
 
-        print(list(self.app.secret_word_sprites), self.secret_word)
+        print(self.secret_word)
 
         if self.app.games == 0:
             percentage = 0
@@ -421,14 +421,15 @@ class Credit():
                                                 self.app.height - (4 * margin_width)))
         self.info_sprite.image.fill(GRAY)
         self.info_sprite.rect = self.info_sprite.image.get_rect(topleft=(20, 50))
-        credit_text = 'This is a word guessing simulation. Players guess the secret ' \
-                      'word by typing letters one by one.  Typing a letter not in the secret ' \
-                      'word will be a "strike".  Six strikes (6 missed letters) is a loss. \n' \
-                      '\n' \
-                      'This simulation has been uniquely \n' \
-                      'designed and written by: \n\nAnthony B. Washington \n\n' \
-                      'MIT License \n\n' \
-                      'Copyright (c) 2022 dub-ab'
+        credit_text = (
+                    'This simulation has been uniquely \n' \
+                    'designed and written by: \n\nAnthony B. Washington \n' \
+                    'MIT License \n' \
+                    'Copyright (c) 2022 dub-ab\n\n'
+                    'Acknowledgements: \n'
+                    '- HaelDB (Brandonmorris12@gmail.com) for the sound files. \n'
+                    '- Clear Code (https://www.youtube.com/c/ClearCode) for inspiration. '
+                    )
         blit_multi_line(self.info_sprite.image, credit_text, (0, 0), self.app.font16, color=DARKTEXT)
         self.btn_exit = c.Button(self.app.width/2-80, 300, LIGHTPINK, 'Exit', self.app.font20)
         self.allsprites = pygame.sprite.Group()
