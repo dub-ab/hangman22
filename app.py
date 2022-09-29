@@ -66,9 +66,7 @@ class App():
         self.credit = Credit(self)
         self.load = Load(self)
         self.save = Save(self) 
-        
-
-
+     
     def on_execute(self):
         """The method to start the application.  """
 
