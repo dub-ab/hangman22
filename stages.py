@@ -35,7 +35,7 @@ class Splash():
     def on_event(self, event):
         """The method to handle pygame events. """
         if event.type == pygame.QUIT:
-            self.is_running = False
+            self.app.is_running = False
         
         if event.type == pygame.MOUSEMOTION:
             for button in self.button_sprites.sprites():
@@ -168,7 +168,6 @@ class Active():
                             self.gallows[self.gallows_index], self.strike_zone_sprites, 
                             self.btn_instructions)
     
-
     def make_popup(self):
         """teh method to make the popup
         """
@@ -202,7 +201,7 @@ class Active():
     def on_event(self, event):
         """The method to handle user inputs."""
         if event.type == pygame.QUIT:
-            self.is_running = False
+            self.app.is_running = False
         if event.type == pygame.MOUSEMOTION:
             for button in self.allsprites.sprites():
                 if type(button) == c.Button:
@@ -560,7 +559,6 @@ class Load():
                         self.app.active.new_game()
                         self.app.game_state = 'splash'
 
-
     def on_update(self):
         """The method to update values upon each cycle. 
         """
@@ -633,7 +631,6 @@ class Save():
         self.allsprites.add(self.app.header, self.btn_continue, 
         self.info_sprite, self.text1, self.text2, self.player_name_surf)
 
-
     def on_event(self, event):
         """The method to handle inputs from the pygame event queue. 
 
@@ -685,15 +682,11 @@ class Save():
         self.app.wins = 0
         self.app.games = 0
         self.app.game_state = 'load'
-        self.app.load = Load(self.app)
-                            
+        self.app.load = Load(self.app)                       
                         
-                        
-
     def on_update(self):
         """The method to react to changes in the class variables"""
         pass
-
 
     def on_render(self):
         """The method to draw Save screen objects to the App.screen. """
