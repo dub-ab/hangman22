@@ -35,7 +35,7 @@ class Splash():
     def on_event(self, event):
         """The method to handle pygame events. """
         if event.type == pygame.QUIT:
-            self.is_running = False
+            self.app.is_running = False
         
         if event.type == pygame.MOUSEMOTION:
             for button in self.button_sprites.sprites():
@@ -202,7 +202,7 @@ class Active():
     def on_event(self, event):
         """The method to handle user inputs."""
         if event.type == pygame.QUIT:
-            self.is_running = False
+            self.app.is_running = False
         if event.type == pygame.MOUSEMOTION:
             for button in self.allsprites.sprites():
                 if type(button) == c.Button:
