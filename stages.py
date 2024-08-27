@@ -2,7 +2,7 @@
 
 class blueprints for :
     
-    splash, active, outcome credit, load, save
+    splash, active, outcome, credit, load, save
     
 """
 
